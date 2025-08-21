@@ -349,7 +349,7 @@ const EmergenciaScreen = () => {
   );
 
   const openWhatsApp = (message) => {
-    const phoneNumber = "5493804123456";
+    const phoneNumber = "3804126375";
     const encodedMessage = encodeURIComponent(message);
     window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank');
   };
@@ -512,15 +512,22 @@ const EmergenciaScreen = () => {
             <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-center text-gray-800">Ubicación</h3>
             
             <div className="bg-gray-100 rounded-xl mb-3 sm:mb-4 h-32 sm:h-48 flex items-center justify-center border-2 border-dashed border-gray-300">
-              <div className="text-center text-gray-500">
-                <Icon3D type="mapPin" size="w-8 h-8 sm:w-12 sm:h-12" />
-                <p className="text-xs sm:text-sm mt-2">Aquí va tu mapa</p>
-                <p className="text-xs hidden sm:block">Integra Google Maps</p>
-              </div>
-            </div>
+  <div className="text-center text-gray-500">
+    <Icon3D type="mapPin" size="w-8 h-8 sm:w-12 sm:h-12" />
+    <p className="text-xs sm:text-sm mt-2">Aquí va tu mapa</p>
+    <a
+      href="https://www.google.com/maps?q=-29.4135,-66.8558"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-xs hidden sm:block text-blue-500 underline"
+    >
+      Ver en Google Maps
+    </a>
+  </div>
+</div>
             
             <div className="text-center text-gray-600">
-              <p className="mb-1 sm:mb-2 text-sm sm:text-base">Av. Principal 1234</p>
+              <p className="mb-1 sm:mb-2 text-sm sm:text-base">Av. San Nicolas de Bari 1317</p>
               <p className="mb-1 sm:mb-2 text-sm sm:text-base">La Rioja, Argentina</p>
               <p className="text-xs sm:text-sm">Zona: toda la ciudad</p>
             </div>
@@ -531,7 +538,7 @@ const EmergenciaScreen = () => {
             title="Contacto"
             content={
               <div>
-                <p className="mb-1 sm:mb-2 text-sm sm:text-base">+54 380 412-3456</p>
+                <p className="mb-1 sm:mb-2 text-sm sm:text-base">+54 380 412-6375</p>
                 <p className="mb-1 sm:mb-2 text-sm sm:text-base">WhatsApp disponible</p>
                 <p className="text-xs sm:text-sm">Respuesta inmediata</p>
               </div>
@@ -558,27 +565,44 @@ const EmergenciaScreen = () => {
               <div className="text-blue-600 text-xl sm:text-2xl mb-2 sm:mb-3 flex justify-center">
                 <Icon3D type="key" size="w-6 h-6 sm:w-8 sm:h-8" />
               </div>
-              <h4 className="font-semibold mb-1 text-center text-gray-800 text-sm sm:text-base">Carlos Ruiz</h4>
+              <h4 className="font-semibold mb-1 text-center text-gray-800 text-sm sm:text-base">Lucas Castros</h4>
               <p className="text-gray-600 text-center text-xs mb-1">Especialista Autos</p>
-              <p className="text-gray-500 text-center text-xs">8 años exp.</p>
+              <p className="text-gray-500 text-center text-xs">5 años exp.</p>
             </div>
             
+            <div className="rounded-xl p-3 sm:p-4 shadow-md bg-white border border-blue-200">
+              <div className="text-blue-600 text-xl sm:text-2xl mb-2 sm:mb-3 flex justify-center">
+                 <Icon3D type="shield" size="w-6 h-6 sm:w-8 sm:h-8" />
+              </div>
+              <h4 className="font-semibold mb-1 text-center text-gray-800 text-sm sm:text-base">David Soria</h4>
+              <p className="text-gray-600 text-center text-xs mb-1">Ayudante Cerrajero.</p>
+              <p className="text-gray-500 text-center text-xs">1 años exp.</p>
+            </div>
+            
+            <div className="rounded-xl p-3 sm:p-4 shadow-md bg-white border border-blue-200">
+              <div className="text-blue-600 text-xl sm:text-2xl mb-2 sm:mb-3 flex justify-center">
+               <Icon3D type="lock" size="w-6 h-6 sm:w-8 sm:h-8" />
+              </div>
+              <h4 className="font-semibold mb-1 text-center text-gray-800 text-sm sm:text-base">Rodrigo Morales</h4>
+              <p className="text-gray-600 text-center text-xs mb-1">Logistica</p>
+              <p className="text-gray-500 text-center text-xs">5 años exp.</p>
+            </div>
             <div className="rounded-xl p-3 sm:p-4 shadow-md bg-white border border-blue-200">
               <div className="text-blue-600 text-xl sm:text-2xl mb-2 sm:mb-3 flex justify-center">
                 <Icon3D type="lock" size="w-6 h-6 sm:w-8 sm:h-8" />
               </div>
-              <h4 className="font-semibold mb-1 text-center text-gray-800 text-sm sm:text-base">Miguel Torres</h4>
-              <p className="text-gray-600 text-center text-xs mb-1">Cerraduras Resid.</p>
-              <p className="text-gray-500 text-center text-xs">6 años exp.</p>
+              <h4 className="font-semibold mb-1 text-center text-gray-800 text-sm sm:text-base">Brandon Romero</h4>
+              <p className="text-gray-600 text-center text-xs mb-1">Logistica</p>
+              <p className="text-gray-500 text-center text-xs">3 años exp.</p>
             </div>
-            
             <div className="rounded-xl p-3 sm:p-4 shadow-md bg-white border border-blue-200">
               <div className="text-blue-600 text-xl sm:text-2xl mb-2 sm:mb-3 flex justify-center">
-                <Icon3D type="shield" size="w-6 h-6 sm:w-8 sm:h-8" />
+               <Icon3D type="key" size="w-6 h-6 sm:w-8 sm:h-8" />
               </div>
-              <h4 className="font-semibold mb-1 text-center text-gray-800 text-sm sm:text-base">Ana López</h4>
-              <p className="text-gray-600 text-center text-xs mb-1">Cajas Fuertes</p>
-              <p className="text-gray-500 text-center text-xs">5 años exp.</p>
+              <h4 className="font-semibold mb-1 text-center text-gray-800 text-sm sm:text-base">Maxi Morales</h4>
+              <p className="text-gray-600 text-center text-xs mb-1">Apertura auto/casa</p>
+              <p className="text-gray-500 text-center text-xs">8 años exp.</p>
+             
             </div>
           </div>
         </div>
@@ -591,7 +615,7 @@ const EmergenciaScreen = () => {
                 <div className="bg-blue-50 rounded-full w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-3 sm:mb-4 flex items-center justify-center">
                   <Icon3D type="car" size="w-8 h-8 sm:w-10 sm:h-10" />
                 </div>
-                <div className="text-2xl sm:text-3xl font-bold text-blue-600 mb-1">1,500+</div>
+                <div className="text-2xl sm:text-3xl font-bold text-blue-600 mb-1">1325+</div>
                 <div className="text-gray-600 text-xs sm:text-sm font-medium">Autos Abiertos</div>
               </div>
               
@@ -607,7 +631,7 @@ const EmergenciaScreen = () => {
                 <div className="bg-yellow-50 rounded-full w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-3 sm:mb-4 flex items-center justify-center">
                   <Icon3D type="shield" size="w-8 h-8 sm:w-10 sm:h-10" />
                 </div>
-                <div className="text-2xl sm:text-3xl font-bold text-yellow-600 mb-1">450+</div>
+                <div className="text-2xl sm:text-3xl font-bold text-yellow-600 mb-1">73</div>
                 <div className="text-gray-600 text-xs sm:text-sm font-medium">Cajas Fuertes</div>
               </div>
             </div>
@@ -617,9 +641,9 @@ const EmergenciaScreen = () => {
         <div className="mb-6 sm:mb-8">
           <h3 className="text-xl sm:text-2xl font-bold text-center text-gray-800 mb-4 sm:mb-6">Síguenos</h3>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
-            <SocialCard icon={() => <Icon3D type="message" size="w-5 h-5 sm:w-6 sm:h-6" />} platform="Facebook" metric="2.1k seguidores" color="blue" />
+            <SocialCard icon={() => <Icon3D type="message" size="w-5 h-5 sm:w-6 sm:h-6" />} platform="Facebook" metric="1.8k seguidores" color="blue" />
             <SocialCard icon={() => <Icon3D type="message" size="w-5 h-5 sm:w-6 sm:h-6" />} platform="Instagram" metric="1.8k seguidores" color="pink" />
-            <SocialCard icon={() => <Icon3D type="mapPin" size="w-5 h-5 sm:w-6 sm:h-6" />} platform="Google" metric="4.8★ (120 reseñas)" color="red" />
+            <SocialCard icon={() => <Icon3D type="mapPin" size="w-5 h-5 sm:w-6 sm:h-6" />} platform="Google" metric="5★ (131 reseñas)" color="red" />
           </div>
         </div>
 
