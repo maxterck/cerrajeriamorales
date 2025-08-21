@@ -507,24 +507,77 @@ const EmergenciaScreen = () => {
         <div className="grid grid-cols-1 gap-4 sm:gap-6 mb-6 sm:mb-8">
           <div className="rounded-2xl p-4 sm:p-6 shadow-lg bg-white">
             <div className="text-blue-600 text-2xl sm:text-3xl mb-3 sm:mb-4 flex justify-center">
-              <Icon3D type="mapPin" size="w-6 h-6 sm:w-8 sm:h-8" />
+             
             </div>
             <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-center text-gray-800">Ubicación</h3>
             
-            <div className="bg-gray-100 rounded-xl mb-3 sm:mb-4 h-32 sm:h-48 flex items-center justify-center border-2 border-dashed border-gray-300">
-  <div className="text-center text-gray-500">
-    <Icon3D type="mapPin" size="w-8 h-8 sm:w-12 sm:h-12" />
-    <p className="text-xs sm:text-sm mt-2">Aquí va tu mapa</p>
-    <a
-      href="https://www.google.com/maps?q=-29.4135,-66.8558"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="text-xs hidden sm:block text-blue-500 underline"
-    >
-      Ver en Google Maps
-    </a>
-  </div>
-</div>
+           
+            <div className="relative rounded-xl mb-3 sm:mb-4 h-32 sm:h-48 overflow-hidden border-2 border-gray-200">
+              <style jsx>{`
+                @keyframes bounce {
+                  0%, 100% { transform: translateY(0); }
+                  50% { transform: translateY(-20px); }
+                }
+                @keyframes glow {
+                  0%, 100% { filter: drop-shadow(0 0 8px #fbbf24) drop-shadow(0 0 20px #f59e0b); }
+                  50% { filter: drop-shadow(0 0 15px #fbbf24) drop-shadow(0 0 30px #f59e0b); }
+                }
+                .key-marker {
+                  animation: bounce 2s ease-in-out infinite, glow 1.5s ease-in-out infinite;
+                  pointer-events: none;
+                }
+              `}</style>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3462.7879!2d-66.8580!3d-29.4135!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sar!4v1635789012345!5m2!1ses!2sar"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Ubicación de Cerrajería Morales"
+              ></iframe>
+              
+              {/* Llave animada en el centro del mapa */}
+              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                <svg viewBox="0 0 100 100" className="key-marker w-12 h-12 sm:w-16 sm:h-16">
+                  <defs>
+                    <linearGradient id="keyMapGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stopColor="#fbbf24" />
+                      <stop offset="50%" stopColor="#f59e0b" />
+                      <stop offset="100%" stopColor="#d97706" />
+                    </linearGradient>
+                    <filter id="keyGlow">
+                      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                      <feMerge>
+                        <feMergeNode in="coloredBlur"/>
+                        <feMergeNode in="SourceGraphic"/>
+                      </feMerge>
+                    </filter>
+                  </defs>
+                  <circle cx="30" cy="40" r="18" fill="url(#keyMapGradient)" filter="url(#keyGlow)"/>
+                  <circle cx="30" cy="40" r="8" fill="none" stroke="#92400e" strokeWidth="2"/>
+                  <rect x="45" y="37" width="35" height="6" fill="url(#keyMapGradient)" filter="url(#keyGlow)"/>
+                  <rect x="70" y="43" width="4" height="8" fill="url(#keyMapGradient)"/>
+                  <rect x="75" y="43" width="3" height="5" fill="url(#keyMapGradient)"/>
+                  <ellipse cx="25" cy="35" rx="4" ry="8" fill="rgba(255,255,255,0.6)" transform="rotate(-20 25 35)"/>
+                </svg>
+              </div>
+              
+              <div className="absolute top-2 right-2 bg-white rounded-lg shadow-md p-1.5 sm:p-2">
+                <a
+                  href="https://www.google.com/maps/search/Av.+San+Nicolas+de+Bari+1317,+La+Rioja,+Argentina/@-29.4135,-66.8558,17z"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs sm:text-sm text-blue-600 hover:text-blue-800 font-medium flex items-center gap-1"
+                >
+                  <svg className="w-3 h-3 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                  Ver más grande
+                </a>
+              </div>
+            </div>
             
             <div className="text-center text-gray-600">
               <p className="mb-1 sm:mb-2 text-sm sm:text-base">Av. San Nicolas de Bari 1317</p>
@@ -560,7 +613,7 @@ const EmergenciaScreen = () => {
             </div>
           </div>
           
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
             <div className="rounded-xl p-3 sm:p-4 shadow-md bg-white border border-blue-200">
               <div className="text-blue-600 text-xl sm:text-2xl mb-2 sm:mb-3 flex justify-center">
                 <Icon3D type="key" size="w-6 h-6 sm:w-8 sm:h-8" />
@@ -572,37 +625,38 @@ const EmergenciaScreen = () => {
             
             <div className="rounded-xl p-3 sm:p-4 shadow-md bg-white border border-blue-200">
               <div className="text-blue-600 text-xl sm:text-2xl mb-2 sm:mb-3 flex justify-center">
-                 <Icon3D type="shield" size="w-6 h-6 sm:w-8 sm:h-8" />
+                <Icon3D type="shield" size="w-6 h-6 sm:w-8 sm:h-8" />
               </div>
               <h4 className="font-semibold mb-1 text-center text-gray-800 text-sm sm:text-base">David Soria</h4>
-              <p className="text-gray-600 text-center text-xs mb-1">Ayudante Cerrajero.</p>
-              <p className="text-gray-500 text-center text-xs">1 años exp.</p>
+              <p className="text-gray-600 text-center text-xs mb-1">Ayudante Cerrajero</p>
+              <p className="text-gray-500 text-center text-xs">1 año exp.</p>
             </div>
             
             <div className="rounded-xl p-3 sm:p-4 shadow-md bg-white border border-blue-200">
               <div className="text-blue-600 text-xl sm:text-2xl mb-2 sm:mb-3 flex justify-center">
-               <Icon3D type="lock" size="w-6 h-6 sm:w-8 sm:h-8" />
+                <Icon3D type="lock" size="w-6 h-6 sm:w-8 sm:h-8" />
               </div>
               <h4 className="font-semibold mb-1 text-center text-gray-800 text-sm sm:text-base">Rodrigo Morales</h4>
-              <p className="text-gray-600 text-center text-xs mb-1">Logistica</p>
+              <p className="text-gray-600 text-center text-xs mb-1">Logística</p>
               <p className="text-gray-500 text-center text-xs">5 años exp.</p>
             </div>
+            
             <div className="rounded-xl p-3 sm:p-4 shadow-md bg-white border border-blue-200">
               <div className="text-blue-600 text-xl sm:text-2xl mb-2 sm:mb-3 flex justify-center">
                 <Icon3D type="lock" size="w-6 h-6 sm:w-8 sm:h-8" />
               </div>
               <h4 className="font-semibold mb-1 text-center text-gray-800 text-sm sm:text-base">Brandon Romero</h4>
-              <p className="text-gray-600 text-center text-xs mb-1">Logistica</p>
+              <p className="text-gray-600 text-center text-xs mb-1">Logística</p>
               <p className="text-gray-500 text-center text-xs">3 años exp.</p>
             </div>
+            
             <div className="rounded-xl p-3 sm:p-4 shadow-md bg-white border border-blue-200">
               <div className="text-blue-600 text-xl sm:text-2xl mb-2 sm:mb-3 flex justify-center">
-               <Icon3D type="key" size="w-6 h-6 sm:w-8 sm:h-8" />
+                <Icon3D type="key" size="w-6 h-6 sm:w-8 sm:h-8" />
               </div>
               <h4 className="font-semibold mb-1 text-center text-gray-800 text-sm sm:text-base">Maxi Morales</h4>
               <p className="text-gray-600 text-center text-xs mb-1">Apertura auto/casa</p>
               <p className="text-gray-500 text-center text-xs">8 años exp.</p>
-             
             </div>
           </div>
         </div>
@@ -651,7 +705,6 @@ const EmergenciaScreen = () => {
           <h3 className="text-xl sm:text-2xl font-bold text-center text-gray-800 mb-4 sm:mb-6">Nuestros Trabajos</h3>
           
           <div className="bg-white rounded-2xl shadow-lg p-4 sm:p-6 mb-4 sm:mb-6">
-            {/* Grid 2x2 para las fotos */}
             <div className="grid grid-cols-2 gap-3 sm:gap-4 mb-4">
               <div className="aspect-square bg-gradient-to-br from-gray-200 to-gray-300 rounded-xl flex items-center justify-center">
                 <div className="text-center text-gray-500">
@@ -686,7 +739,6 @@ const EmergenciaScreen = () => {
               </div>
             </div>
             
-            {/* Botón para ver más */}
             <div className="text-center">
               <button className="text-blue-600 hover:text-blue-800 text-sm font-medium transition-colors duration-300">
                 Ver más trabajos en Google Maps →
