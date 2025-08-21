@@ -2,6 +2,11 @@ import React, { useState } from 'react';
 import { ArrowLeft } from 'lucide-react';
 import { FaFacebookF, FaInstagram, FaGoogle } from "react-icons/fa";
 import './emergencia.css';
+import trabajo1 from '../fotos/trabajo1.png';
+import trabajo2 from '../fotos/trabajo2.png';   // <-- fijate la extensión real
+import trabajo3 from '../fotos/trabajo3.png';
+import trabajo4 from '../fotos/trabajo4.png';
+
 
 const EmergenciaScreen = () => {
   const [currentView, setCurrentView] = useState('home');
@@ -515,26 +520,26 @@ const EmergenciaScreen = () => {
             <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-center text-gray-800">Ubicación</h3>
             
            <div className="relative rounded-xl mb-3 sm:mb-4 h-32 sm:h-48 overflow-hidden border-2 border-gray-200">
-              <style jsx>{`
-                @keyframes bounce {
-                  0%, 100% { transform: translateY(0); }
-                  50% { transform: translateY(-20px); }
-                }
-                @keyframes glow {
-                  0%, 100% { filter: drop-shadow(0 0 8px #fbbf24) drop-shadow(0 0 20px #f59e0b); }
-                  50% { filter: drop-shadow(0 0 15px #fbbf24) drop-shadow(0 0 30px #f59e0b); }
-                }
-                .key-marker {
-                  animation: bounce 2s ease-in-out infinite, glow 1.5s ease-in-out infinite;
-                  pointer-events: none;
-                }
-              `}</style>
+              <style>{`
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+  }
+  @keyframes glow {
+    0%, 100% { filter: drop-shadow(0 0 8px #fbbf24) drop-shadow(0 0 20px #f59e0b); }
+    50% { filter: drop-shadow(0 0 15px #fbbf24) drop-shadow(0 0 30px #f59e0b); }
+  }
+  .key-marker {
+    animation: bounce 2s ease-in-out infinite, glow 1.5s ease-in-out infinite;
+    pointer-events: none;
+  }
+`}</style>
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3462.7879!2d-66.8580!3d-29.4135!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9427dbcaa7e5d2f1%3A0x8e3d8b5f7c9e4a3!2sAv.%20San%20Nicol%C3%A1s%20de%20Bari%201317%2C%20F5300%20La%20Rioja%2C%20Argentina!5e0!3m2!1ses!2sar!4v1635789012345!5m2!1ses!2sar"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
-                allowFullScreen=""
+                allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 title="Ubicación de Cerrajería Morales"
@@ -596,7 +601,7 @@ const EmergenciaScreen = () => {
             title="Contacto"
             content={
               <div>
-                <p className="mb-1 sm:mb-2 text-sm sm:text-base">+54 380 412-6375</p>
+                  
                 <p className="mb-1 sm:mb-2 text-sm sm:text-base">WhatsApp Disponible</p>
                 <p className="text-xs sm:text-sm">Respuesta Inmediata</p>
               </div>
@@ -744,59 +749,49 @@ const EmergenciaScreen = () => {
 
 
 
+<div>
+  <h3 className="text-xl sm:text-2xl font-bold text-center text-gray-800 mb-4 sm:mb-6">
+    Nuestros Trabajos
+  </h3>
+
+  <div className="bg-white rounded-2xl shadow-lg p-4 sm:p-6 mb-4 sm:mb-6">
+    {/* Grid de 4 fotos */}
+    <div className="grid grid-cols-2 gap-3 sm:gap-4 mb-4">
+  <div className="aspect-square overflow-hidden rounded-xl shadow-md">
+    <img src={trabajo1} alt="Apertura Vehículos"
+         className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
+  </div>
+  <div className="aspect-square overflow-hidden rounded-xl shadow-md">
+    <img src={trabajo2} alt="Instalación Cerraduras"
+         className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
+  </div>
+  <div className="aspect-square overflow-hidden rounded-xl shadow-md">
+    <img src={trabajo3} alt="Copias de Llaves"
+         className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
+  </div>
+  <div className="aspect-square overflow-hidden rounded-xl shadow-md">
+    <img src={trabajo4} alt="Cajas Fuertes"
+         className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
+  </div>
 </div>
 
-        <div>
-          <h3 className="text-xl sm:text-2xl font-bold text-center text-gray-800 mb-4 sm:mb-6">Nuestros Trabajos</h3>
+    </div>
+
+    {/* Botón/link a más trabajos */}
+    <div className="text-center">
+      <a
+        href="https://www.google.com/maps/place/Cerrajeria+Morales+La+Rioja+Argentina/@-29.4139861,-66.8658867,3a,75y,90t"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <button className="text-blue-600 hover:text-blue-800 text-sm font-medium transition-colors duration-300">
+          Ver más trabajos en Google Maps →
+        </button>
+      </a>
+    </div>
+  </div>
+</div>
           
-          <div className="bg-white rounded-2xl shadow-lg p-4 sm:p-6 mb-4 sm:mb-6">
-            <div className="grid grid-cols-2 gap-3 sm:gap-4 mb-4">
-              <div className="aspect-square bg-gradient-to-br from-gray-200 to-gray-300 rounded-xl flex items-center justify-center">
-                <div className="text-center text-gray-500">
-                  <Icon3D type="wrench" size="w-6 h-6 sm:w-8 sm:h-8" />
-                  <p className="text-xs sm:text-sm font-semibold mt-2">Apertura Vehículos</p>
-                  <p className="text-xs hidden sm:block">Google Maps #1</p>
-                </div>
-              </div>
-              
-              <div className="aspect-square bg-gradient-to-br from-gray-200 to-gray-300 rounded-xl flex items-center justify-center">
-                <div className="text-center text-gray-500">
-                  <Icon3D type="lock" size="w-6 h-6 sm:w-8 sm:h-8" />
-                  <p className="text-xs sm:text-sm font-semibold mt-2">Inst. Cerraduras</p>
-                  <p className="text-xs hidden sm:block">Google Maps #2</p>
-                </div>
-              </div>
-              
-              <div className="aspect-square bg-gradient-to-br from-gray-200 to-gray-300 rounded-xl flex items-center justify-center">
-                <div className="text-center text-gray-500">
-                  <Icon3D type="key" size="w-6 h-6 sm:w-8 sm:h-8" />
-                  <p className="text-xs sm:text-sm font-semibold mt-2">Copias Llaves</p>
-                  <p className="text-xs hidden sm:block">Google Maps #3</p>
-                </div>
-              </div>
-              
-              <div className="aspect-square bg-gradient-to-br from-gray-200 to-gray-300 rounded-xl flex items-center justify-center">
-                <div className="text-center text-gray-500">
-                  <Icon3D type="shield" size="w-6 h-6 sm:w-8 sm:h-8" />
-                  <p className="text-xs sm:text-sm font-semibold mt-2">Cajas Fuertes</p>
-                  <p className="text-xs hidden sm:block">Google Maps #4</p>
-                </div>
-              </div>
-            </div>
-            
-            <div className="text-center">
-  <a
-    href="https://www.google.com/maps/place/Cerrajeria+Morales+La+Rioja+Argentina/@-29.4139861,-66.8658867,3a,75y,90t/data=!3m8!1e2!3m6!1sAF1QipPgA3P6Oy5N9EWrO27XUidxvX0DikO3JSA3Mpa9!2e10!3e12!6shttps:%2F%2Flh3.googleusercontent.com%2Fp%2FAF1QipPgA3P6Oy5N9EWrO27XUidxvX0DikO3JSA3Mpa9%3Dw203-h360-k-no!7i2160!8i3840!4m9!3m8!1s0x9427dbcac6f756e9:0x6a2fa8f53ef0f4b6!8m2!3d-29.4139086!4d-66.8658717!10e5!14m1!1BCgIgAQ!16s%2Fg%2F11twpjtszx?entry=ttu&g_ep=EgoyMDI1MDgxOC4wIKXMDSoASAFQAw%3D%3D"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    <button className="text-blue-600 hover:text-blue-800 text-sm font-medium transition-colors duration-300">
-      Ver más trabajos en Google Maps →
-    </button>
-  </a>
-</div>
-
-          </div>
         </div>
 
         <div className="text-center mt-8">
@@ -810,7 +805,7 @@ const EmergenciaScreen = () => {
           </Button>
         </div>
       </div>
-    </div>
+    
   );
 
   const ChatbotView = () => (
