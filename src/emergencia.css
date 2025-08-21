@@ -1,0 +1,23 @@
+/* Animación de gradiente para las cards sociales */
+@keyframes gradient-x {
+  0%, 100% { background-size: 200% 200%; background-position: left center; }
+  50%      { background-size: 200% 200%; background-position: right center; }
+}
+.animate-gradient-x {
+  animation: gradient-x 6s ease infinite;
+  background-size: 200% 200%;
+}
+
+/* Marcador de llave sobre el mapa */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-20px); }
+}
+@keyframes glow {
+  0%, 100% { filter: drop-shadow(0 0 8px #fbbf24) drop-shadow(0 0 20px #f59e0b); }
+  50%      { filter: drop-shadow(0 0 15px #fbbf24) drop-shadow(0 0 30px #f59e0b); }
+}
+.key-marker {
+  animation: bounce 2s ease-in-out infinite, glow 1.5s ease-in-out infinite;
+  pointer-events: none;
+}

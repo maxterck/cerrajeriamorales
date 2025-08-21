@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { ArrowLeft } from 'lucide-react';
+import { FaFacebookF, FaInstagram, FaGoogle } from "react-icons/fa";
+import './emergencia.css';
 
 const EmergenciaScreen = () => {
   const [currentView, setCurrentView] = useState('home');
@@ -12,6 +14,7 @@ const EmergenciaScreen = () => {
     dark: '#1f2937',
     light: '#f8fafc'
   };
+  
 
   const Icon3D = ({ type, size = 'w-12 h-12' }) => {
     const iconComponents = {
@@ -511,8 +514,7 @@ const EmergenciaScreen = () => {
             </div>
             <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-center text-gray-800">Ubicación</h3>
             
-           
-            <div className="relative rounded-xl mb-3 sm:mb-4 h-32 sm:h-48 overflow-hidden border-2 border-gray-200">
+           <div className="relative rounded-xl mb-3 sm:mb-4 h-32 sm:h-48 overflow-hidden border-2 border-gray-200">
               <style jsx>{`
                 @keyframes bounce {
                   0%, 100% { transform: translateY(0); }
@@ -528,7 +530,7 @@ const EmergenciaScreen = () => {
                 }
               `}</style>
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3462.7879!2d-66.8580!3d-29.4135!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sar!4v1635789012345!5m2!1ses!2sar"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3462.7879!2d-66.8580!3d-29.4135!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9427dbcaa7e5d2f1%3A0x8e3d8b5f7c9e4a3!2sAv.%20San%20Nicol%C3%A1s%20de%20Bari%201317%2C%20F5300%20La%20Rioja%2C%20Argentina!5e0!3m2!1ses!2sar!4v1635789012345!5m2!1ses!2sar"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
@@ -564,6 +566,9 @@ const EmergenciaScreen = () => {
                 </svg>
               </div>
               
+            
+
+              
               <div className="absolute top-2 right-2 bg-white rounded-lg shadow-md p-1.5 sm:p-2">
                 <a
                   href="https://www.google.com/maps/search/Av.+San+Nicolas+de+Bari+1317,+La+Rioja,+Argentina/@-29.4135,-66.8558,17z"
@@ -592,8 +597,8 @@ const EmergenciaScreen = () => {
             content={
               <div>
                 <p className="mb-1 sm:mb-2 text-sm sm:text-base">+54 380 412-6375</p>
-                <p className="mb-1 sm:mb-2 text-sm sm:text-base">WhatsApp disponible</p>
-                <p className="text-xs sm:text-sm">Respuesta inmediata</p>
+                <p className="mb-1 sm:mb-2 text-sm sm:text-base">WhatsApp Disponible</p>
+                <p className="text-xs sm:text-sm">Respuesta Inmediata</p>
               </div>
             }
           />
@@ -608,7 +613,7 @@ const EmergenciaScreen = () => {
                 <Icon3D type="wrench" size="w-10 h-10 sm:w-12 sm:h-12" />
               </div>
               <h4 className="text-base sm:text-lg font-bold mb-1 sm:mb-2 text-center">Lucas Morales</h4>
-              <p className="text-blue-100 text-center text-xs sm:text-sm mb-1 sm:mb-2">Jefe - Cerrajero Matriculado</p>
+              <p className="text-blue-100 text-center text-xs sm:text-sm mb-1 sm:mb-2">Jefe - Cerrajero </p>
               <p className="text-blue-100 text-center text-xs">15 años experiencia</p>
             </div>
           </div>
@@ -692,14 +697,54 @@ const EmergenciaScreen = () => {
           </div>
         </div>
 
-        <div className="mb-6 sm:mb-8">
-          <h3 className="text-xl sm:text-2xl font-bold text-center text-gray-800 mb-4 sm:mb-6">Síguenos</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
-            <SocialCard icon={() => <Icon3D type="message" size="w-5 h-5 sm:w-6 sm:h-6" />} platform="Facebook" metric="1.8k seguidores" color="blue" />
-            <SocialCard icon={() => <Icon3D type="message" size="w-5 h-5 sm:w-6 sm:h-6" />} platform="Instagram" metric="1.8k seguidores" color="pink" />
-            <SocialCard icon={() => <Icon3D type="mapPin" size="w-5 h-5 sm:w-6 sm:h-6" />} platform="Google" metric="5★ (131 reseñas)" color="red" />
-          </div>
-        </div>
+       <div className="mb-6 sm:mb-8">
+  <h3 className="text-xl sm:text-2xl font-bold text-center text-gray-800 mb-4 sm:mb-6">Síguenos</h3>
+
+
+<div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
+  {/* Facebook */}
+  <a
+    href="https://www.facebook.com/CerrajeriaMorales"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="bg-gradient-to-r from-blue-700 via-blue-500 to-blue-700 animate-gradient-x 
+               rounded-xl shadow-lg flex flex-col items-center justify-center text-center p-6 text-white"
+  >
+    <FaFacebookF className="text-3xl mb-2" />
+    <h2 className="font-bold text-lg">Facebook</h2>
+    <p className="text-sm opacity-90">1.8k seguidores</p>
+  </a>
+
+  {/* Instagram */}
+  <a
+    href="https://www.instagram.com/cerrajeria.morales/?hl=es"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="bg-gradient-to-r from-pink-600 via-purple-500 to-yellow-500 animate-gradient-x 
+               rounded-xl shadow-lg flex flex-col items-center justify-center text-center p-6 text-white"
+  >
+    <FaInstagram className="text-3xl mb-2" />
+    <h2 className="font-bold text-lg">Instagram</h2>
+    <p className="text-sm opacity-90">1.8k seguidores</p>
+  </a>
+
+  {/* Google */}
+  <a
+    href="https://www.google.com/maps/place/Cerrajeria+Morales+La+Rioja+Argentina/@-29.4139861,-66.8658867,17z"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="bg-gradient-to-r from-orange-600 via-orange-400 to-orange-600 animate-gradient-x 
+               rounded-xl shadow-lg flex flex-col items-center justify-center text-center p-6 text-white"
+  >
+    <FaGoogle className="text-3xl mb-2" />
+    <h2 className="font-bold text-lg">Google</h2>
+    <p className="text-sm opacity-90">5★ (131 reseñas)</p>
+  </a>
+</div>
+
+
+
+</div>
 
         <div>
           <h3 className="text-xl sm:text-2xl font-bold text-center text-gray-800 mb-4 sm:mb-6">Nuestros Trabajos</h3>
@@ -740,10 +785,17 @@ const EmergenciaScreen = () => {
             </div>
             
             <div className="text-center">
-              <button className="text-blue-600 hover:text-blue-800 text-sm font-medium transition-colors duration-300">
-                Ver más trabajos en Google Maps →
-              </button>
-            </div>
+  <a
+    href="https://www.google.com/maps/place/Cerrajeria+Morales+La+Rioja+Argentina/@-29.4139861,-66.8658867,3a,75y,90t/data=!3m8!1e2!3m6!1sAF1QipPgA3P6Oy5N9EWrO27XUidxvX0DikO3JSA3Mpa9!2e10!3e12!6shttps:%2F%2Flh3.googleusercontent.com%2Fp%2FAF1QipPgA3P6Oy5N9EWrO27XUidxvX0DikO3JSA3Mpa9%3Dw203-h360-k-no!7i2160!8i3840!4m9!3m8!1s0x9427dbcac6f756e9:0x6a2fa8f53ef0f4b6!8m2!3d-29.4139086!4d-66.8658717!10e5!14m1!1BCgIgAQ!16s%2Fg%2F11twpjtszx?entry=ttu&g_ep=EgoyMDI1MDgxOC4wIKXMDSoASAFQAw%3D%3D"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <button className="text-blue-600 hover:text-blue-800 text-sm font-medium transition-colors duration-300">
+      Ver más trabajos en Google Maps →
+    </button>
+  </a>
+</div>
+
           </div>
         </div>
 
